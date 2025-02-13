@@ -417,7 +417,7 @@ pub fn pstring(string : String) -> Parser[Char, String] {
     fn(seq) {
       let iter = loop seq, Seq::from_string(string) {
         iter, input => {
-          if input.is_empty().not() {
+          if not(input.is_empty()) {
             let (target, rest_target) = match input.uncons() {
               None => return None
               Some(s) => s

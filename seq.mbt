@@ -55,7 +55,7 @@ pub fn Seq::from_string(str : String) -> Seq[Char] {
           Some(
             (
               Char::from_int(
-                0x10000 + (ch.to_int() - 0xd800).lsl(10) + ch2.to_int() - 0xdc00,
+                0x10000 + ((ch.to_int() - 0xd800)<<(10)) + ch2.to_int() - 0xdc00,
               ),
               aux(offset + 2),
             ),
@@ -96,11 +96,11 @@ pub fn to_string[T : Show](self : Seq[T]) -> String {
   }
 }
 
-pub fn Seq::output[T : Show](self : Seq[T], log : Logger) -> Unit {
+pub fn Seq::output[T : Show](self : Seq[T], log : &Logger) -> Unit {
   loop self.uncons() {
     None => ()
     Some((hd, tl)) => {
-      (hd as Show).output(log)
+      (hd as &Show).output(log)
       continue tl.uncons()
     }
   }
