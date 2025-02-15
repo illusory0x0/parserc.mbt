@@ -1,7 +1,10 @@
 ///| A parser combinator
 pub type Parser[Token, Value] (Seq[Token]) -> (Value, Seq[Token])?
 
-pub fn Parser::new[Token, Value](f : (Seq[Token]) -> (Value, Seq[Token])?) -> Parser[Token, Value] {
+///|
+pub fn Parser::new[Token, Value](
+  f : (Seq[Token]) -> (Value, Seq[Token])?
+) -> Parser[Token, Value] {
   Parser(f)
 }
 
@@ -79,6 +82,7 @@ pub fn sequence[Token, A](
   })
 }
 
+///|
 test "sequence" {
   let parser = sequence([pchar('a'), pchar('b'), pchar('c')])
   inspect!(
@@ -270,6 +274,7 @@ pub fn Parser::repeat_with_sep[Token, A, B](
   })
 }
 
+///|
 test "repeat" {
   let parser = pvalue(fn {
     '0' => Some(0)
@@ -329,7 +334,9 @@ pub fn Parser::between[Token, A, B](
 }
 
 ///|
-pub fn Parser::from_ref[Token, A](self : Ref[Parser[Token, A]]) -> Parser[Token, A] {
+pub fn Parser::from_ref[Token, A](
+  self : Ref[Parser[Token, A]]
+) -> Parser[Token, A] {
   Parser(fn(str) { self.val.parse(str) })
 }
 
@@ -401,6 +408,7 @@ pub let pint64 : Parser[Char, Int64] = pdigits.map(fn(tuple) {
   }
 })
 
+///|
 test "pint" {
   inspect!(pint.parse(Seq::from_string("12345")), content="Some((12345, ))")
   inspect!(pint.parse(Seq::from_string("-0")), content="Some((0, ))")
@@ -435,6 +443,7 @@ pub fn pstring(string : String) -> Parser[Char, String] {
   })
 }
 
+///|
 test "pstring" {
   let parser = pstring("asdf")
   inspect!(

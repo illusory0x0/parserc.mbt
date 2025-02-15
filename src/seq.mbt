@@ -104,6 +104,7 @@ pub fn Seq::output[T : Show](self : Seq[T], log : &Logger) -> Unit {
   }
 }
 
+///|
 test "Seq from string" {
   let sequence = Seq::from_string("沪A")
   assert_eq!(sequence.length(), 2)
@@ -119,6 +120,7 @@ test "Seq from string" {
   inspect!(sequence.uncons(), content="Some(('🀄', '\u{fe0f}'))")
 }
 
+///|
 test "Seq from array" {
   let sequence = Seq::from_array("沪A".iter().collect()[:])
   assert_eq!(sequence.length(), 2)
