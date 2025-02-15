@@ -1,6 +1,10 @@
 ///| A parser combinator
 pub type Parser[Token, Value] (Seq[Token]) -> (Value, Seq[Token])?
 
+pub fn Parser::new[Token, Value](f : (Seq[Token]) -> (Value, Seq[Token])?) -> Parser[Token, Value] {
+  Parser(f)
+}
+
 ///| Parses a sequence of tokens
 ///
 /// If the parsing succeeds, `Some(result, rest)` is returned  
