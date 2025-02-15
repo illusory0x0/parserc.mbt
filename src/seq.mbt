@@ -1,7 +1,11 @@
 ///| A possibility infinite lazy list
 pub type Seq[T] () -> (T, Seq[T])?
 
-pub fn Seq::new[T](f : () -> (T, Seq[T])?) -> Seq[T] { f }
+///|
+pub fn Seq::new[T](f : () -> (T, Seq[T])?) -> Seq[T] {
+  f
+}
+
 ///| Checks if the sequence is empty
 pub fn Seq::is_empty[T](seq : Seq[T]) -> Bool {
   match (seq._)() {

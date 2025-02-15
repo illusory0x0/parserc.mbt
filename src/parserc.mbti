@@ -59,6 +59,7 @@ impl Seq {
   is_empty[T](Self[T]) -> Bool
   length[T](Self[T]) -> Int
   map[T1, T2](Self[T1], (T1) -> T2) -> Self[T2]
+  new[T](() -> (T, Self[T])?) -> Self[T]
   output[T : Show](Self[T], &Logger) -> Unit
   to_string[T : Show](Self[T]) -> String
   uncons[T](Self[T]) -> (T, Self[T])?
