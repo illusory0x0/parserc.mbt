@@ -6,5 +6,5 @@
   "readme": "README.md",
   "keywords": ["parser", "combinator"],
   "description": "A simple parser combinator",
-  "source": "."
+  "source": "src"
 }
