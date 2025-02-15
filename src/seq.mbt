@@ -1,4 +1,4 @@
-///| A possibily infinate lazy list
+///| A possibility infinite lazy list
 pub type Seq[T] () -> (T, Seq[T])?
 
 ///| Checks if the sequence is empty
