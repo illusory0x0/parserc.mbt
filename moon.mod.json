@@ -2,5 +2,9 @@
   "name": "peter-jerry-ye/parser-combinator",
   "version": "0.9.1",
   "license": "Apache-2.0",
-  "repository": "https://github.com/peter-jerry-ye/moonbit-parser-combinator"
+  "repository": "https://github.com/peter-jerry-ye/moonbit-parser-combinator",
+  "readme": "README.md",
+  "keywords": ["parser", "combinator"],
+  "description": "A simple parser combinator",
+  "source": "."
 }
