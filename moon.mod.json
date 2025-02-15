@@ -1,8 +1,8 @@
 {
-  "name": "peter-jerry-ye/parser-combinator",
+  "name": "illusory0x0/parserc",
   "version": "0.9.1",
   "license": "Apache-2.0",
-  "repository": "https://github.com/peter-jerry-ye/moonbit-parser-combinator",
+  "repository": "https://github.com/illusory0x0/parserc.mbt",
   "readme": "README.md",
   "keywords": ["parser", "combinator"],
   "description": "A simple parser combinator",
