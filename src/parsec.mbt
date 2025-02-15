@@ -325,7 +325,7 @@ pub fn Parser::between[Token, A, B](
 }
 
 ///|
-pub fn Parser::ref[Token, A](self : Ref[Parser[Token, A]]) -> Parser[Token, A] {
+pub fn Parser::from_ref[Token, A](self : Ref[Parser[Token, A]]) -> Parser[Token, A] {
   Parser(fn(str) { self.val.parse(str) })
 }
 
