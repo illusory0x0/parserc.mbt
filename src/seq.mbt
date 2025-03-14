@@ -91,7 +91,7 @@ pub fn length[T](self : Seq[T]) -> Int {
 }
 
 ///|
-pub fn to_string[T : Show](self : Seq[T]) -> String {
+pub impl[T : Show] Show for Seq[T] with to_string(self) {
   loop self.uncons(), "" {
     None, cumul => cumul
     Some((hd, tl)), cumul => continue tl.uncons(), cumul + hd.to_string()
@@ -99,7 +99,7 @@ pub fn to_string[T : Show](self : Seq[T]) -> String {
 }
 
 ///|
-pub fn Seq::output[T : Show](self : Seq[T], log : &Logger) -> Unit {
+pub impl[T : Show] Show for Seq[T] with output(self, log) {
   loop self.uncons() {
     None => ()
     Some((hd, tl)) => {
