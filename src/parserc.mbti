@@ -43,6 +43,7 @@ impl Parser {
   optional[Token, A](Self[Token, A]) -> Self[Token, A?]
   or_else[Token, A](Self[Token, A], Self[Token, A]) -> Self[Token, A]
   or_others[Token, A](Self[Token, A], ArrayView[Self[Token, A]]) -> Self[Token, A]
+  #deprecated
   parse[Token, Value](Self[Token, Value], Seq[Token]) -> (Value, Seq[Token])?
   repeat[Token, A](Self[Token, A]) -> Self[Token, Array[A]]
   repeat_0_to_n[Token, A](Self[Token, A], Int) -> Self[Token, Array[A]]
@@ -50,6 +51,7 @@ impl Parser {
   repeat_n[Token, A](Self[Token, A], Int) -> Self[Token, Array[A]]
   repeat_n_with_sep[Token, A, B](Self[Token, A], Int, Self[Token, B]) -> Self[Token, Array[A]]
   repeat_with_sep[Token, A, B](Self[Token, A], Self[Token, B]) -> Self[Token, Array[A]]
+  run[Token, Value](Self[Token, Value], Seq[Token]) -> (Value, Seq[Token])?
 }
 
 pub type Seq[T] () -> (T, Seq[T])?
