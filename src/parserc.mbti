@@ -3,6 +3,8 @@ package illusory0x0/parserc
 alias @moonbitlang/core/immut/list as @list
 
 // Values
+fn length[T](Seq[T]) -> Int
+
 fn lift2[Token, A, B, C]((A, B) -> C) -> (Parser[Token, A], Parser[Token, B]) -> Parser[Token, C]
 
 fn one_of[A : Show](Array[A]) -> Parser[Char, A]
@@ -60,10 +62,9 @@ impl Seq {
   length[T](Self[T]) -> Int
   map[T1, T2](Self[T1], (T1) -> T2) -> Self[T2]
   new[T](() -> (T, Self[T])?) -> Self[T]
-  output[T : Show](Self[T], &Logger) -> Unit
-  to_string[T : Show](Self[T]) -> String
   uncons[T](Self[T]) -> (T, Self[T])?
 }
+impl[T : Show] Show for Seq[T]
 
 // Type aliases
 
