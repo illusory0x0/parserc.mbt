@@ -1,6 +1,8 @@
-package illusory0x0/parserc
+package "illusory0x0/parserc"
 
-alias @moonbitlang/core/immut/list as @list
+import(
+  "moonbitlang/core/immut/list"
+)
 
 // Values
 fn length[T](Seq[T]) -> Int
