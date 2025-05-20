@@ -54,7 +54,7 @@ pub fn Seq::from_string(str : String) -> Seq[Char] {
         let ch2 = str[offset + 1]
         Some(
           (
-            Char::from_int(
+            Int::unsafe_to_char(
               0x10000 + ((ch.to_int() - 0xd800) << 10) + ch2.to_int() - 0xdc00,
             ),
             aux(offset + 2),
